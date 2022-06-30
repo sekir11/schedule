@@ -1,0 +1,30 @@
+.basic-input {
+
+    text-align: center;
+
+    input {
+        border: none;
+        border-radius: 50px;
+        background: #f7f7f7;
+        box-shadow: inset 3px 3px 2px #bcbcbc, inset -3px -3px 2px #ffffff;
+        height: 30px;
+        margin: 20px auto 0;
+        padding-left: 20px;
+    }
+
+    textArea {
+        border: none;
+        border-radius: 12px;
+        background: #f7f7f7;
+        box-shadow: inset 3px 3px 2px #bcbcbc, inset -3px -3px 2px #ffffff;
+        height: 64px;
+        width: 50%;
+        margin: 0 auto 0;
+        padding-left: 20px;
+    }
+}
+
+.event-name-input input {
+    margin: 0 auto 20px;
+    width: 50%;
+}

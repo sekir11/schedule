@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css" type="text/css">
+</head>
+    <body>
+        <div class="txt-title">
+            <h1 th:text="${user.name} + 'さん'">◯◯さん</h1>
+        </div>
+
+        <div class="txt-title">
+            <h1>今後の予定</h1>
+        </div>
+
+        <div class="block event-box" th:each="event : ${eventList.events}">
+            <p class="txt-event-title" th:text="${event.eventName}">歓迎会</p>
+            <div class="btn btn-detail">
+                <a>詳細</a>
+            </div>
+        </div>
+
+        <div class="btn btn-create-event-page">
+            <a onclick="location.href='./create-event-page'">イベント作成</a>
+        </div>
+    </body>
+</html>

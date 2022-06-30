@@ -1,0 +1,243 @@
+@charset "UTF-8";
+.block {
+  border-radius: 20px;
+  background: #e0e0e0;
+  -webkit-box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+          box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.event-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search-box .basic-input input {
+  margin: 0px !important;
+}
+
+.search-box .btn a {
+  padding: 5px 20px;
+}
+
+.search-result-box {
+  background: #e0e0e0;
+  -webkit-box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+          box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  width: 40%;
+  margin: 10px auto;
+  text-align: center;
+  color: #575555;
+}
+
+.search-result-box .search-result-name {
+  padding: 10px 0;
+  -webkit-margin-before: unset;
+          margin-block-start: unset;
+  -webkit-margin-after: unset;
+          margin-block-end: unset;
+  border-bottom: solid thin #959292;
+}
+
+.search-result-box .search-result-name:last-child {
+  border-bottom: unset;
+}
+
+.search-result-box .search-result-name.selected {
+  font-weight: bold;
+  color: #fff;
+  background: #f47575;
+}
+
+.basic-input {
+  text-align: center;
+}
+
+.basic-input input {
+  border: none;
+  border-radius: 50px;
+  background: #f7f7f7;
+  -webkit-box-shadow: inset 3px 3px 2px #bcbcbc, inset -3px -3px 2px #ffffff;
+          box-shadow: inset 3px 3px 2px #bcbcbc, inset -3px -3px 2px #ffffff;
+  height: 30px;
+  margin: 20px auto 0;
+  padding-left: 20px;
+}
+
+.basic-input textArea {
+  border: none;
+  border-radius: 12px;
+  background: #f7f7f7;
+  -webkit-box-shadow: inset 3px 3px 2px #bcbcbc, inset -3px -3px 2px #ffffff;
+          box-shadow: inset 3px 3px 2px #bcbcbc, inset -3px -3px 2px #ffffff;
+  height: 64px;
+  width: 50%;
+  margin: 0 auto 0;
+  padding-left: 20px;
+}
+
+.event-name-input input {
+  margin: 0 auto 20px;
+  width: 50%;
+}
+
+.btn a {
+  border-radius: 50px;
+  background: linear-gradient(145deg, #dedede, #ffffff);
+  -webkit-box-shadow: 5px 5px 10px #bcbcbc, -5px -5px 10px #ffffff;
+          box-shadow: 5px 5px 10px #bcbcbc, -5px -5px 10px #ffffff;
+  padding: 10px 50px;
+  text-decoration: none;
+  color: #959292;
+  cursor: pointer;
+}
+
+.btn-login {
+  height: 70px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.btn-sign-up-page {
+  height: 70px;
+  text-align: center;
+}
+
+.btn-detail {
+  margin: 20px 20px;
+  width: 20%;
+}
+
+.btn-detail a {
+  padding: 10px 20px;
+}
+
+.btn-create-event-page {
+  height: 70px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.btn-search-user {
+  text-align: center;
+}
+
+.btn-create-event {
+  height: 70px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.txt-title {
+  text-align: center;
+  color: #959292;
+}
+
+.txt-error {
+  text-align: center;
+  color: #f47575;
+}
+
+.txt-event-title {
+  color: #575555;
+  padding: 20px 20px;
+  width: 60%;
+  font-size: 28px;
+}
+
+.wrapper {
+  margin: 15px auto;
+  max-width: 700px;
+}
+
+.container-calendar {
+  background: #ffffff;
+  padding: 15px;
+  width: 80%;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.table-calendar {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-calendar th,
+.table-calendar td {
+  padding: 10px;
+  border: 1px solid #e2e2e2;
+  text-align: center;
+  vertical-align: top;
+}
+
+.date-picker.selected {
+  font-weight: bold;
+  color: #fff;
+  background: #f47575;
+}
+
+.date-picker.selected span {
+  border-bottom: 2px solid currentColor;
+}
+
+.date-picker.today {
+  font-weight: bold;
+  background: #aaa7a7;
+}
+
+.date-picker.today span {
+  border-bottom: 2px solid currentColor;
+}
+
+/* 日曜 */
+.date-picker:nth-child(1) {
+  color: red;
+}
+
+/* 土曜 */
+.date-picker:nth-child(7) {
+  color: blue;
+}
+
+#monthAndYear {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.button-container-calendar {
+  position: relative;
+  margin-bottom: 4em;
+  clear: both;
+}
+
+#previous {
+  float: left;
+}
+
+#next {
+  float: right;
+}
+/*# sourceMappingURL=main.css.map */

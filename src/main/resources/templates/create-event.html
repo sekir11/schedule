@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script th:src="@{/js/CreateEvent.js}" src="../static/js/CreateEvent.js"></script>
+
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css" type="text/css">
+    <script th:inline="javascript">
+        var user = /*[[ ${user} ]]*/;
+    </script>
+</head>
+    <body>
+        <div class="txt-title">
+            <h1>イベント作成</h1>
+        </div>
+
+        <div class="container-calendar">
+            <h4 id="monthAndYear"></h4>
+            <div class="button-container-calendar btn">
+                <a id="previous" onclick="previous()">‹</a>
+                <a id="next" onclick="next()">›</a>
+            </div>
+            
+            <table class="table-calendar" id="calendar" data-lang="ja">
+                <thead id="thead-month"></thead>
+                <tbody id="calendar-body"></tbody>
+            </table>
+        </div>
+
+        <div class="txt-title">
+            <h2>イベント名</h2>
+        </div>
+        <div class="basic-input event-name-input">
+            <input class="event-name" type="text" name="eventName" autocomplete="">
+        </div>
+
+        <div class="txt-title">
+            <h2>メモ</h2>
+        </div>
+        <div class="basic-input">
+            <textarea class="event-memo" type="text" name="memo" autocomplete=""></textarea>
+        </div>
+
+        <div class="txt-title">
+            <h2>参加者追加</h2>
+        </div>
+
+        <div class="search-box">
+            <div class="basic-input">
+                <input class="search-name" type="text" name="name" autocomplete="">
+            </div>
+            <div class="btn-search-user btn">
+                <a class="search">検索</a>
+            </div>
+        </div>
+
+        <div class="search-result-box">
+        </div>
+
+
+        <div class="btn-create-event btn">
+            <a class="create-event">作成</a>
+        </div>
+        <form class="go-events" method="get" action="/events" ></form>
+    </body>
+    <script th:src="@{/js/calendar.js}" src="../static/js/calendar.js" type="text/javascript"></script>
+</html>

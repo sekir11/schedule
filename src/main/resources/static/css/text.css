@@ -1,0 +1,17 @@
+.txt-title {
+  text-align: center;
+  color: #959292;
+}
+
+.txt-error {
+  text-align: center;
+  color: #f47575;
+}
+
+.txt-event-title {
+  color: #575555;
+  padding: 20px 20px;
+  width: 60%;
+  font-size: 28px;
+}
+/*# sourceMappingURL=text.css.map */

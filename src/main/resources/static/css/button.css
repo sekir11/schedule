@@ -1,0 +1,47 @@
+.btn a {
+  border-radius: 50px;
+  background: linear-gradient(145deg, #dedede, #ffffff);
+  -webkit-box-shadow: 5px 5px 10px #bcbcbc, -5px -5px 10px #ffffff;
+          box-shadow: 5px 5px 10px #bcbcbc, -5px -5px 10px #ffffff;
+  padding: 10px 50px;
+  text-decoration: none;
+  color: #959292;
+  cursor: pointer;
+}
+
+.btn-login {
+  height: 70px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.btn-sign-up-page {
+  height: 70px;
+  text-align: center;
+}
+
+.btn-detail {
+  margin: 20px 20px;
+  width: 20%;
+}
+
+.btn-detail a {
+  padding: 10px 20px;
+}
+
+.btn-create-event-page {
+  height: 70px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.btn-search-user {
+  text-align: center;
+}
+
+.btn-create-event {
+  height: 70px;
+  margin-top: 60px;
+  text-align: center;
+}
+/*# sourceMappingURL=button.css.map */

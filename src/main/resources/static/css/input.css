@@ -1,0 +1,32 @@
+.basic-input {
+  text-align: center;
+}
+
+.basic-input input {
+  border: none;
+  border-radius: 50px;
+  background: #f7f7f7;
+  -webkit-box-shadow: inset 3px 3px 2px #bcbcbc, inset -3px -3px 2px #ffffff;
+          box-shadow: inset 3px 3px 2px #bcbcbc, inset -3px -3px 2px #ffffff;
+  height: 30px;
+  margin: 20px auto 0;
+  padding-left: 20px;
+}
+
+.basic-input textArea {
+  border: none;
+  border-radius: 12px;
+  background: #f7f7f7;
+  -webkit-box-shadow: inset 3px 3px 2px #bcbcbc, inset -3px -3px 2px #ffffff;
+          box-shadow: inset 3px 3px 2px #bcbcbc, inset -3px -3px 2px #ffffff;
+  height: 64px;
+  width: 50%;
+  margin: 0 auto 0;
+  padding-left: 20px;
+}
+
+.event-name-input input {
+  margin: 0 auto 20px;
+  width: 50%;
+}
+/*# sourceMappingURL=input.css.map */

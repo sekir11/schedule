@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css" type="text/css">
+</head>
+    <body>
+
+        <div class="txt-title">
+            <h1>Welcome</h1>
+        </div>
+        <form method="get" name="login" action="/login">
+            <div class="block">
+                <div class="basic-input">
+                    <input type="text" placeholder="user name" name="name" autocomplete="">
+                </div>
+                <div class="basic-input">
+                    <input type="text" placeholder="password" name="password" autocomplete="">
+                </div>
+
+                <div class="txt-error">
+                    <p th:text="${error}"></p>
+                </div>
+    
+                <div class="btn-login btn">
+                    <a href="javascript:login.submit()">ログイン</a>
+                </div>
+
+                <div class="btn-sign-up-page btn">
+                    <a onclick="location.href='./sign-up-page'">新規登録</a>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

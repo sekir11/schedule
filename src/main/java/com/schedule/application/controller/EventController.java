@@ -39,7 +39,8 @@ public class EventController {
                                  @PathVariable("userName") String userName,
                                  Model model) {
         Event event = eventService.getEvent(id);
-        model.addAttribute("event", GetEventPayload.of(event));
+        model.addAttribute("event", GetEventPayload.of(event, userName));
+        model.addAttribute("userName", userName);
         return "event-detail";
     }
 

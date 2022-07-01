@@ -1,0 +1,37 @@
+.table-schedule {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.table-schedule th {
+  padding: 10px;
+}
+
+.table-schedule td {
+  padding: 10px;
+}
+
+.table-schedule .fixed {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  background-color: #e0e0e0;
+}
+
+.table-schedule .name {
+  text-align: right;
+}
+
+.table-schedule select {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.table-schedule select[disabled] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+/*# sourceMappingURL=table.css.map */

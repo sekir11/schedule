@@ -68,4 +68,14 @@
   color: #fff;
   background: #f47575;
 }
+
+.table-block {
+  border-radius: 10px;
+  background: #e0e0e0;
+  -webkit-box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+          box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  width: 53%;
+  margin: 0 auto;
+  overflow-x: scroll;
+}
 /*# sourceMappingURL=box.css.map */

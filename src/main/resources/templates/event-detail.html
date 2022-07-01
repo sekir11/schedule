@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css" type="text/css">
+</head>
+    <body>
+        <div class="txt-title">
+            <h1>イベント詳細</h1>
+        </div>
+
+        <div class="txt-title">
+            <h2>イベント名</h2>
+        </div>
+        <div class="basic-input event-name-input">
+            <input disabled class="event-name" th:value="${event.eventName}">
+        </div>
+
+        <div class="txt-title">
+            <h2>メモ</h2>
+        </div>
+        <div class="basic-input">
+            <textarea disabled class="event-memo" th:text="${event.memo}"></textarea>
+        </div>
+
+        <div class="txt-title">
+            <h2>みんなの予定</h2>
+        </div>
+
+        <div class="table-block">
+            <table class="table-schedule">
+                <tr>
+                    <th class="fixed"></th>
+                    <th th:each="eventDate : ${event.eventDates}" th:text="${eventDate.candidateDate}">6/22(水)</th>
+                </tr>
+                <tr th:each="participant, statParticipant : ${event.eventDates.get(0).participants}" th:object="${participant}">
+                    <td class="name fixed" th:text="${participant.name}"></td>
+                    <td th:each="eventDate : ${event.eventDates}">
+                        <select class="select-status" th:selected="${participant.status}" th:disabled="${userName != participant.name}" 
+                        th:id="'eventDateId-' + ${participant.eventDateId} + '-' + ${participant.name}">
+                            <option value="0">ー</option>
+                            <option value="1">△</option>
+                            <option value="2">×</option>
+                            <option value="3">◯</option>
+                        </select>
+                    </td>
+                    
+                
+                </tr>
+            </table>
+        </div>
+        
+        
+    </body>
+</html>

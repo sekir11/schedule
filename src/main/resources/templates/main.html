@@ -18,7 +18,7 @@
         <div class="block event-box" th:each="event : ${eventList.events}">
             <p class="txt-event-title" th:text="${event.eventName}">歓迎会</p>
             <div class="btn btn-detail">
-                <a>詳細</a>
+                <a th:href="'/events/' + ${event.id} + '/' + ${user.name}">詳細</a>
             </div>
         </div>
 

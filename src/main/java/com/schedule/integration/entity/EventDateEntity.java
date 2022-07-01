@@ -8,7 +8,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -38,6 +40,7 @@ public class EventDateEntity {
                 .id(id)
                 .eventId(eventId)
                 .candidateDate(candidateDate)
+                .participants(participantEntities.stream().map(ParticipantEntity::toModel).collect(Collectors.toList()))
                 .build();
     }
 

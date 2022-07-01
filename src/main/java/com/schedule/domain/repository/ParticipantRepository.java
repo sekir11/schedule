@@ -9,4 +9,6 @@ public interface ParticipantRepository {
     List<Participant> getParticipantListByEventDateId(Integer eventDateId);
 
     List<Participant> createParticipant(List<Participant> participants);
+
+    void editParticipant(Participant participant);
 }

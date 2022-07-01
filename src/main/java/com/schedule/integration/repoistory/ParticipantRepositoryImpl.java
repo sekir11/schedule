@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,5 +36,12 @@ public class ParticipantRepositoryImpl implements ParticipantRepository {
         }
 
         return entities.stream().map(ParticipantEntity::toModel).collect(Collectors.toList());
+    }
+
+
+    @Override
+    @Transactional
+    public void editParticipant(Participant participant) {
+        entityManager.merge(ParticipantEntity.toEntity(participant));
     }
 }

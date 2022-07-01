@@ -1,8 +1,11 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
+    <title>Schedule</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script th:src="@{/js/EventDetail.js}" src="../static/js/EventDetail.js"></script>
 
     <link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css" type="text/css">
 </head>
@@ -38,12 +41,12 @@
                 <tr th:each="participant, statParticipant : ${event.eventDates.get(0).participants}" th:object="${participant}">
                     <td class="name fixed" th:text="${participant.name}"></td>
                     <td th:each="eventDate : ${event.eventDates}">
-                        <select class="select-status" th:selected="${participant.status}" th:disabled="${userName != participant.name}" 
-                        th:id="'eventDateId-' + ${participant.eventDateId} + '-' + ${participant.name}">
-                            <option value="0">ー</option>
-                            <option value="1">△</option>
-                            <option value="2">×</option>
-                            <option value="3">◯</option>
+                        <select class="select-status" th:disabled="${userName != participant.name}" 
+                        th:id="'eventDateId-' + ${eventDate.id} + '-' + ${participant.name}">
+                            <option th:selected="${eventDate.participants.get(statParticipant.index).status == '0'}" value="0">ー</option>
+                            <option th:selected="${eventDate.participants.get(statParticipant.index).status == '1'}" value="1">△</option>
+                            <option th:selected="${eventDate.participants.get(statParticipant.index).status == '2'}" value="2">×</option>
+                            <option th:selected="${eventDate.participants.get(statParticipant.index).status == '3'}" value="3">◯</option>
                         </select>
                     </td>
                     

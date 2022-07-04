@@ -40,7 +40,8 @@ public class EventDateEntity {
                 .id(id)
                 .eventId(eventId)
                 .candidateDate(candidateDate)
-                .participants(participantEntities.stream().map(ParticipantEntity::toModel).collect(Collectors.toList()))
+                .participants(participantEntities == null
+                        ? new ArrayList<>() : participantEntities.stream().map(ParticipantEntity::toModel).collect(Collectors.toList()))
                 .build();
     }
 

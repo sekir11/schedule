@@ -9,8 +9,8 @@ CREATE TABLE events (id int auto_increment PRIMARY KEY, event_name varchar(20), 
 CREATE TABLE event_dates (id int auto_increment PRIMARY KEY, event_id int, candidate_date date, FOREIGN KEY(event_id) REFERENCES events(id));
 CREATE TABLE participants (event_date_id int, name varchar(20), status varchar(1), FOREIGN KEY(event_date_id) REFERENCES event_dates(id), FOREIGN KEY(name) REFERENCES users(user_name), PRIMARY KEY(event_date_id, name));
 
-INSERT INTO users VALUES("username", "user@gmail.com", "password");
-INSERT INTO users VALUES("other", "other@gmail.com", "password");
+INSERT INTO users VALUES("username", "seki.ryohei0721@gmail.com", "password");
+INSERT INTO users VALUES("other", "seki.ryohei0721@gmail.com", "password");
 
 INSERT INTO events(id, event_name, memo, create_user) VALUES(1, "歓迎会", "新人歓迎会", "username");
 INSERT INTO events(id, event_name, memo, create_user) VALUES(2, "歓迎会2", "新人歓迎会2", "other");

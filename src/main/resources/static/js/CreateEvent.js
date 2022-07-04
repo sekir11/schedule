@@ -57,6 +57,10 @@ $(function() {
                         users.push(user);
                     });
 
+        let loading = document.createElement("div");
+        loading.className = 'loader';
+        document.body.appendChild(loading);
+
         $.ajax({
             url: "/events",
             type: "POST",
@@ -70,10 +74,12 @@ $(function() {
             })
             
         }).then(() => {
-        $('.go-events').submit();
+            $('.go-events').submit();
         }, () => {
-            console.log("error");
+            $(".loader").removeClass("loader");
         })
+
+        
     })
 
 

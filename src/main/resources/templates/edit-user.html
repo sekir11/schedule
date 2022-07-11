@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Schedule</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css" type="text/css">
+</head>
+    <body>
+        <div class="txt-title">
+            <h1>ユーザー編集</h1>
+        </div>
+        <form method="post" name="editUser" action="/edit-user">
+            <div class="block">
+                <input name="oldName" th:value="${user.name}" type="hidden">
+                <div class="basic-input">
+                    <input type="text" placeholder="user name" name="newName" autocomplete="" th:value="${user.name}">
+                </div>
+                <div class="basic-input">
+                    <input type="text" placeholder="password" name="password" autocomplete="" th:value="${user.password}">
+                </div>
+                <div class="basic-input">
+                    <input type="text" placeholder="mail address" name="address" autocomplete="" th:value="${user.address}">
+                </div>
+
+                <div class="txt-error">
+                    <p th:text="${error}"></p>
+                </div>
+    
+                <div class="btn-login btn">
+                    <a href="javascript:editUser.submit()">更新</a>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

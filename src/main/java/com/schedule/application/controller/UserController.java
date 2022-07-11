@@ -6,6 +6,7 @@ import com.schedule.domain.model.User;
 import com.schedule.domain.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -27,4 +28,19 @@ public class UserController {
         sessionContext.setSessionUser(SessionUser.of(user));
         return "redirect:events";
     }
+
+    @GetMapping("/edit-user")
+    public String getEditUserPage(Model model) {
+        model.addAttribute("user", sessionContext.getSessionUser());
+        return "edit-user";
+    }
+
+    @PostMapping("/edit-user")
+    public String updateUser(String oldName, String newName, String password, String address) {
+        userService.editUser(oldName, newName, password, address);
+        User user = userService.login(newName, password);
+        sessionContext.setSessionUser(SessionUser.of(user));
+        return "redirect:events";
+    }
+
 }

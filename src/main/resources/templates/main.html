@@ -7,8 +7,11 @@
     <link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css" type="text/css">
 </head>
     <body>
-        <div class="txt-title">
+        <div class="txt-title txt-username">
             <h1 th:text="${user.name} + 'さん'">◯◯さん</h1>
+            <div class="btn btn-edit-user-page">
+                <a onclick="location.href='./edit-user'">編集</a>
+            </div>
         </div>
 
         <div class="txt-title">

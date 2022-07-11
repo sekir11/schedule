@@ -13,4 +13,6 @@ public interface EventRepository {
     Integer createEvent(Event event);
 
     Event getEvent(Integer id);
+
+    void editCreateUser(String oldName, String newName);
 }

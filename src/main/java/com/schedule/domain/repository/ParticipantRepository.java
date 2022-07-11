@@ -11,4 +11,6 @@ public interface ParticipantRepository {
     List<Participant> createParticipant(List<Participant> participants);
 
     void editParticipant(Participant participant);
+
+    void editParticipantUserName(String oldName, String newName);
 }

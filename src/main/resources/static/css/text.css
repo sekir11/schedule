@@ -14,4 +14,13 @@
   width: 60%;
   font-size: 28px;
 }
+
+.txt-username {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 /*# sourceMappingURL=text.css.map */

@@ -15,8 +15,6 @@ public class SessionUser implements Serializable {
 
   private static final long serialVersionUID = -2886094327617521428L;
 
-  private Integer id;
-
   private String name;
 
   private String password;

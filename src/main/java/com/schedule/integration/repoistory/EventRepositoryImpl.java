@@ -39,6 +39,9 @@ public class EventRepositoryImpl implements EventRepository {
             " LEFT JOIN ParticipantEntity AS p ON ed.id = p.eventDateId" +
             " WHERE e.id = :id AND e.id = ed.eventId)";
 
+    private final String UPDATE_CREATE_USER
+            = "UPDATE EventEntity SET create_user = :newName WHERE create_user = :oldName";
+
     @Override
     public List<Event> getEventByUserName(String userName) {
         TypedQuery<EventEntity> query = entityManager.createQuery(SELECT_EVENT_BY_NAME, EventEntity.class);
@@ -76,5 +79,14 @@ public class EventRepositoryImpl implements EventRepository {
         EventEntity eventEntity = query.getSingleResult();
 
         return eventEntity.toModel();
+    }
+
+    @Override
+    @Transactional
+    public void editCreateUser(String oldName, String newName) {
+        entityManager.createQuery(UPDATE_CREATE_USER)
+                .setParameter("oldName", oldName)
+                .setParameter("newName", newName)
+                .executeUpdate();
     }
 }

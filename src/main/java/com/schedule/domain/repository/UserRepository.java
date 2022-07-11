@@ -11,4 +11,8 @@ public interface UserRepository {
     void addUser(String name, String password, String address);
 
     List<User> searchUsers(String name);
+
+    void editUser(String name, String password, String address);
+
+    void deleteUser(String name);
 }

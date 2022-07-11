@@ -11,4 +11,6 @@ public interface UserService {
     User signUp(String name, String password, String address);
 
     List<User> searchUsers(String name);
+
+    void editUser(String oldName, String newName, String password, String address);
 }

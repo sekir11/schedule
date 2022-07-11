@@ -25,6 +25,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     private final String SELECT_USER_BY_NAME = "FROM UserEntity WHERE user_name = :name";
     private final String SELECT_USER_LIKE_NAME = "SELECT u FROM UserEntity u WHERE UPPER(u.userName) LIKE UPPER(:name)";
+    private final String DELETE_USER = "DELETE FROM UserEntity WHERE user_name = :name";
 
     /**
      * {@inheritDoc}
@@ -55,5 +56,23 @@ public class UserRepositoryImpl implements UserRepository {
         List<UserEntity> userEntities = query.getResultList();
 
         return userEntities.stream().map(UserEntity::toModel).collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional
+    public void editUser(String name, String password, String address) {
+        TypedQuery<UserEntity> query = entityManager.createQuery(SELECT_USER_BY_NAME, UserEntity.class);
+        query.setParameter("name", name);
+        UserEntity userEntity = query.getSingleResult();
+        userEntity.setPassword(password);
+        userEntity.setAddress(address);
+    }
+
+    @Override
+    @Transactional
+    public void deleteUser(String name) {
+        entityManager.createQuery(DELETE_USER)
+        .setParameter("name", name)
+        .executeUpdate();
     }
 }

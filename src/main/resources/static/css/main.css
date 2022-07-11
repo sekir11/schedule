@@ -143,6 +143,10 @@
   padding: 10px 20px;
 }
 
+.btn-edit-user-page {
+  margin: auto 0;
+}
+
 .btn-create-event-page {
   height: 70px;
   margin-top: 60px;
@@ -174,6 +178,15 @@
   padding: 20px 20px;
   width: 60%;
   font-size: 28px;
+}
+
+.txt-username {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .wrapper {

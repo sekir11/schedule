@@ -19,6 +19,9 @@ public class ParticipantRepositoryImpl implements ParticipantRepository {
     @Autowired
     private final EntityManager entityManager;
 
+    private static final String UPDATE_CREATE_USER
+            = "UPDATE ParticipantEntity SET name = :newName WHERE name = :oldName";
+
     @Override
     public List<Participant> getParticipantListByEventDateId(Integer eventDateId) {
         return null;
@@ -43,5 +46,14 @@ public class ParticipantRepositoryImpl implements ParticipantRepository {
     @Transactional
     public void editParticipant(Participant participant) {
         entityManager.merge(ParticipantEntity.toEntity(participant));
+    }
+
+    @Override
+    @Transactional
+    public void editParticipantUserName(String oldName, String newName) {
+        entityManager.createQuery(UPDATE_CREATE_USER)
+                .setParameter("oldName", oldName)
+                .setParameter("newName", newName)
+                .executeUpdate();
     }
 }
